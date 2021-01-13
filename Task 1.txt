@@ -1,0 +1,59 @@
+1. Difference between HTTP1.1 vs HTTP2 
+
+    HTTP2 is binary, HTTP1 is textual
+    HTTP2 is fully multiplexed, HTTP1 is ordered and blocking
+    HTTP2 can use one connection for parallelism HTTP1 cannot
+    HTTP2 uses header compression to reduce overhead
+    HTTP2 allows servers to “push” responses proactively into client caches
+	HTTP1.1 is that can only load requests one at a time, one request per one TCP connection
+	HTTP2 reduces latency by enabling full request and response multiplexing, minimize protocol overhead via efficient compression of HTTP header fields, and add support for request prioritization and server push.
+
+
+2. http version history 
+
+	HTTP/0.9 - 
+	Extremely simple: requests consist of a single line and start with the only possible method GET followed by the path to the resource 
+	
+    HTTP/1.0 - 
+	Versioning information is now sent within each request (HTTP/1.0 is appended to the GET line)
+    A status code line is also sent at the beginning of the response, allowing the browser itself to understand the success or failure of the request and to adapt its behavior in consequence (like in updating or using its local cache in a specific way)
+    The notion of HTTP headers has been introduced, both for the requests and the responses, allowing metadata to be transmitted and making the protocol extremely flexible and extensible.
+    With the help of the new HTTP headers, the ability to transmit other documents than plain HTML files has been added (Content-Type header).
+
+	
+    HTTP/1.1 - 
+	A connection can be reused, saving the time to reopen it numerous times to display the resources embedded into the single original document retrieved.
+    Pipelining has been added, allowing to send a second request before the answer for the first one is fully transmitted, lowering the latency of the communication.
+    Chunked responses are now also supported.
+    Additional cache control mechanisms have been introduced.
+    Content negotiation, including language, encoding, or type, has been introduced, and allows a client and a server to agree on the most adequate content to exchange.
+    It has Host header, the ability to host different domains at the same IP address now allows server colocation.
+
+
+    IHTTP/2 -
+	A binary protocol rather than text. It can no longer be read and created manually. Despite this hurdle, improved optimization techniques can now be implemented.
+    It is a multiplexed protocol. Parallel requests can be handled over the same connection, removing the order and blocking constraints of the HTTP/1.x protocol.
+    It compresses headers. As these are often similar among a set of requests, this removes duplication and overhead of data transmitted.
+    It allows a server to populate data in a client cache, in advance of it being required, through a mechanism called the server push.
+
+	
+3. List 5 difference between Browser JS(console) vs Nodejs 
+
+	a. "document", which is also another predefined global variable in browsers, has the html which is rendered. Node doesn't have "document" object also, cause it never have to render anything in a page.
+	b. Browsers are not headless. Node is headless.
+	c. Browsers processes response objects. Node processes request object.
+	d. Browser code has the window host object. Node does not have that host object.
+	e. Browser JS used on the client-side. Node is mostly used on the server-side.
+
+4. what happens when you type a URL in the address bar in the browser?
+
+	1. Url goes to DNS and searches for IP address associated with the name.
+	2. Initiates a TCP connection handshake.
+	3. HTTP request is sent. eg. GET http://google.com HTTP/1.1
+	4. Server Response is received in browser
+	5. Html Document is Parsed - send to tokeniser - creates a DOM tree - sent to Render Tree.
+	   CSS is Parsed - send to tokeniser - creates a CSSOM tree - sent to Render Tree.
+	   Javascript - sent to CSSOM and DOM tree.
+	   Render Tree Paints everything on the User Interface inside the browser.
+	
+	
