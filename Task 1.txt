@@ -5,8 +5,8 @@
     HTTP2 can use one connection for parallelism HTTP1 cannot
     HTTP2 uses header compression to reduce overhead
     HTTP2 allows servers to “push” responses proactively into client caches
-	HTTP1.1 is that can only load requests one at a time, one request per one TCP connection
-	HTTP2 reduces latency by enabling full request and response multiplexing, minimize protocol overhead via efficient compression of HTTP header fields, and add support for request prioritization and server push.
+    HTTP1.1 is that can only load requests one at a time, one request per one TCP connection
+    HTTP2 reduces latency by enabling full request and response multiplexing, minimize protocol overhead via efficient compression of HTTP header fields, and add support for request prioritization and server push.
 
 
 2. http version history 
@@ -30,7 +30,7 @@
     It has Host header, the ability to host different domains at the same IP address now allows server colocation.
 
 
-    IHTTP/2 -
+    HTTP/2 -
 	A binary protocol rather than text. It can no longer be read and created manually. Despite this hurdle, improved optimization techniques can now be implemented.
     It is a multiplexed protocol. Parallel requests can be handled over the same connection, removing the order and blocking constraints of the HTTP/1.x protocol.
     It compresses headers. As these are often similar among a set of requests, this removes duplication and overhead of data transmitted.
@@ -54,6 +54,6 @@
 	5. Html Document is Parsed - send to tokeniser - creates a DOM tree - sent to Render Tree.
 	   CSS is Parsed - send to tokeniser - creates a CSSOM tree - sent to Render Tree.
 	   Javascript - sent to CSSOM and DOM tree.
-	   Render Tree Paints everything on the User Interface inside the browser.
+	6. Render Tree Paints everything on the User Interface inside the browser.
 	
 	
