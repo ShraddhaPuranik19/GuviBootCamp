@@ -11,8 +11,8 @@
 
 2. http version history 
 
-	HTTP/0.9 - 
-	Extremely simple: requests consist of a single line and start with the only possible method GET followed by the path to the resource 
+    HTTP/0.9 - 
+    Extremely simple: requests consist of a single line and start with the only possible method GET followed by the path to the resource 
 	
     HTTP/1.0 - 
 	Versioning information is now sent within each request (HTTP/1.0 is appended to the GET line)
