@@ -1,0 +1,16 @@
+1. Load the rest countries data using your html and script.js file and run a for loop on the data and print all the country name in the console. 
+
+	request.onload = function() {
+    var countrydata = JSON.parse(this.response);
+    for (var i = 0; i < countrydata.length; i++) 
+	{
+        console.log(countrydata[i].name);
+	}
+		
+2. Write a write up on Difference between copy by value and copy by reference. 
+	- Copy by value means it creates actual duplicate in a new memory location. It is used for primitive data types like number and String. 2 different entities are created and changes in 1 don not affect other.
+	- Copy by reference means both variables point to the same loaction. Shared address. Changes to 1 will reflect in the copy as well. Happens with non-primitive data type like Array and Objects. Its like having two keys of the same room shared.
+	
+
+3. How to copy by value a composite datatype (array+objects). 
+   - With the help of spread operator (…).
